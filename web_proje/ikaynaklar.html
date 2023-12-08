@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>My Little House</title>
+        <meta name="description" content="tiny house, minimalist, minimal evler">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="kaynaklar/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="img/caravan.png" type="image/x-icon" />
+        <style>
+     
+            .dropdown-item:hover{
+                background-color: transparent;
+            }
+            
+            #menu_yazi{
+                
+                margin-left: 10px;
+                font-family: 'Playfair Display', serif;
+            
+            }
+            #menu_yazi:hover{
+                
+                border-right: 3px solid white;
+                border-bottom: 2px solid white;
+                 border-radius: 10px;
+                 margin-right: -2.5px;
+                 margin-bottom: -2px;
+                
+             }
+            .kontrol{
+              background-color: rgba(12,12,12,0.9);
+            }
+            .loader{
+              position: fixed;
+              top: 0px;
+              left: 0px;
+              width: 100%;
+              height: 100vh;
+              display: flex;
+              background: white;
+              justify-content: center;
+              align-items: center;
+              z-index: 999999;
+            }
+            .loader img{
+              width:50px;
+            }
+            .hidden1{
+              animation: fadeOut 1s ease-in;
+              animation-fill-mode: forwards;
+            }
+            @keyframes fadeOut{
+              100%{
+                opacity: 0;
+                visibility: hidden;
+              }
+            }
+            
+            .navbar-brand{
+              letter-spacing: 5px;
+               border-bottom: 2px solid white;
+               border-right: 3px solid white;
+               border-radius: 10px;
+            }
+            #duyurubutonu:hover{
+                background-color: rgba(81, 79, 79, 0.9);
+                transition: 0.2s background-color ease-in-out;
+            }
+            .sayfakalip{
+                position: relative;
+                top: 100px;
+                display: flex;
+            }
+            #kart-body{
+              text-align: center;
+              font-family:initial;
+            }
+            .icerikinsankaynaklari{
+              max-width: 100%;
+              display: flex;
+              align-items: stretch;
+            }
+            .icerikinsankaynaklariyazi p{
+              padding: 20px 10px;
+              font-size: 1vw;
+              font-weight: 600;
+              line-height: 3vh;
+            }
+            
+            #adminicon{
+              text-align: right;padding: 15px; background-color: brown; border-radius: 20px; text-decoration: none;font-size: 15px; 
+            }
+            #adminicon:hover{
+              color:white;
+              background-color: rgb(175, 62, 62);
+            }
+           
+            .card{
+              border:5px solid black;
+            }
+
+            .footersosyal{
+              color: white;
+              width: 50%;
+              display: flex;
+              flex-direction: column;
+              
+            }
+            .footersosyal h4{
+              margin: 20px;
+              text-align: right;
+              
+            }
+
+            .footeriletisim{
+              color: white;
+              width: 50%;
+              display: flex;
+              flex-direction: column;
+              
+            }
+            
+            .footersosyal ul {
+              max-width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0px;
+              padding-left: 20px;
+              justify-content: end;
+
+            }
+
+            .footersosyal ul li{
+              display: inline-block;
+              padding-left: 10px;
+            padding-right: 30px;
+            color: white;
+            
+            }
+            .footersosyal ul li a{
+              color: white;
+              font-size: 20px;
+
+            }
+            .footersosyal ul li a:hover{
+              color: blue;
+              transition: 0.2s color ease-in-out;
+            
+            }
+
+            @media (max-width:1200px) {
+
+              .icerikinsankaynaklariyazi p{
+              padding: 20px 10px;
+              font-size: 1.8vh;
+              font-weight: 600;
+              line-height: 2.4vh;
+              }
+            }
+
+            @media (max-width:1050px) {
+
+              #menu_yazi{
+                font-size: 14px;
+              }
+
+              .icerikinsankaynaklariyazi p{
+              padding: 20px 10px;
+              font-size: 1.8vh;
+              font-weight: 600;
+              line-height: 2.3vh;
+            }
+
+
+            }
+
+            @media (max-width:991.20px) {
+             
+              .kontrol{
+              background-color: transparent;
+              border: 0px;
+            }
+            .icerikinsankaynaklari{
+              max-width: 100%;
+              display: flex;
+              flex-direction: column;
+
+
+            }
+              .icerikinsankaynaklariyazi p{
+              padding: 20px 20px;
+              font-size: 1.5vh;
+              font-weight: 600;
+              line-height: 4vh;
+            }
+              
+            }
+
+
+        
+            @media (max-width:850px) {
+              .icerikinsankaynaklari{
+              max-width: 100%;
+              display: flex;
+              flex-direction: column;
+
+
+            }
+              .icerikinsankaynaklariyazi p{
+              padding: 20px 20px;
+              font-size: 1.5vh;
+              font-weight: 600;
+              line-height: 4vh;
+            }
+            }
+              
+            @media (max-width:600px) {
+             
+              .icerikinsankaynaklariyazi p{
+              font-weight: 600;
+              line-height: 3.5vh;
+            }
+
+            }
+            
+
+
+
+          @media (max-width:400px){
+              .footer{
+               flex-direction: column;
+              }
+              .footersosyal ul {
+              max-width: 100%;
+              justify-content: start;
+              padding-left:10px ;
+            }
+            .footersosyal ul li a {
+              font-size: 20px;
+            }
+            .footersosyal h4{
+              max-width: 100%;
+              text-align: left;
+            }
+
+          }
+          @media (max-width:370px){
+            .footersosyal ul li{
+              padding: 10px;
+              
+            }
+            .footersosyal ul li a {
+              font-size: 5vw;
+              
+            }
+
+          }
+
+       
+
+        </style>
+
+
+    </head>
+
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: rgba(12,12,12,0.9);">
+            <a class="navbar-brand" style="color:white;font-size: 16px;" href="index.html"><b>MY</b>LITTLE<b>TINY</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white;">
+              <i class="fa fa-bars" style="color:white;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" id="menu_yazi" style="color:white;" href="index.html">Anasayfa <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="menu_yazi" style="color:white;" href="hakkimizda.html">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="menu_yazi" style="color:white;" href="misyonvizyon.html">Misyon-Vizyon</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="menu_yazi" style="color:white" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Ürünlerimiz
+                  </a>
+                  <div class="dropdown-menu kontrol" >
+                    <a class="dropdown-item"   style="color:white;font-family: 'Playfair Display', serif;"href="tinys.html">● Tiny S</a>
+                    <a class="dropdown-item"  style="color:white;font-family: 'Playfair Display', serif;" href="tinyx.html">● Tiny X</a>
+                    <a class="dropdown-item"  style="color:white;font-family: 'Playfair Display', serif;" href="tinyy.html">● Tiny Y</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="menu_yazi"  style="color:white" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                      Birimlerimiz
+                    </a>
+                    <div class="dropdown-menu kontrol" >
+                      <a class="dropdown-item"   style="color:white;font-family: 'Playfair Display', serif;"href="ikaynaklar.html">● İnsan Kaynaklarımız</a>
+                      <a class="dropdown-item"   style="color:white;font-family: 'Playfair Display', serif;" href="ekip.html">● Ekibimiz</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="menu_yazi" style="color:white;" href="duyuru.html">Duyurular</a>
+                  </li>
+    
+                  <li class="nav-item">
+                    <a class="nav-link" id="menu_yazi" style="color:white;" href="iletisim.html">İletişim</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>   
+          <div class="loader">
+            <img src="img/yukleme.gif" alt="">
+          </div>
+
+           
+          <div class="sayfakalip" id="urun1">
+                <div class="container">
+                    <div class="row" >
+                    
+                        <div class="col-12">
+                          <div class="icerikinsankaynaklari">
+                         <div class="icerikinsankaynaklariresim" style="flex-basis: 40%;">  
+                          <div class="card" style="max-width: 100%;">
+                            <img src="img/insan_kaynaklari.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" id="kart-body">
+                              <h4>Selin Gökbey</h4><br>
+                              <h6>İnsan Kaynakları Uzmanı</h5>
+                                <address>    
+                              <p>
+                                E-posta: selin.gokbey@example.com <br>
+                                Telefon: (+90) 000 000 0000</p>
+                                </address>
+                                <a href="cv/CV.docx" download><img src="img/document.png" alt="" ></a>
+                            </div>
+                          </div>
+                        </div> 
+                         <div class="icerikinsankaynaklariyazi" style="max-width: 100%;flex-basis: 60%;margin: 20px 30px;border: 5px solid black;border-radius: 10px;">
+                          <p>Merhaba! Ben Selin Gökbey, İstanbul Üniversitesi İşletme Fakültesi'nden mezun, 30 yaşında bir insan kaynakları uzmanıyım.
+                            <br> İnsan kaynakları alanındaki kariyerime olan tutkum, üniversite yıllarımda aldığım İnsan Kaynakları Yönetimi eğitimiyle başladı. 
+                            <br> Stajlarım ve gönüllü çalışmalarım sayesinde, işe alım süreçleri, performans yönetimi ve eğitim programlarının nasıl tasarlandığını öğrenme fırsatı buldum.
+                            <br>Mezuniyet sonrası kariyerime, <b>Minimalist</b> Şirketi'nde <b>İnsan Kaynakları Uzmanı</b> olarak başladım. Burada, insan kaynakları politikalarını oluşturmak ve uygulamak, işe alım süreçlerini yönetmek ve personel performansını artırmak gibi çeşitli sorumluluklar üstlendim.
+                            <br> İlerleyen yıllarda, insan kaynakları yönetimi alanında daha geniş bir etki yaratmayı ve çeşitli sektörlerdeki profesyonellerle işbirliği yapmayı hedefliyorum. Bu yolculukta karşılaşacağım zorluklar ve başarılar, beni sürekli olarak daha iyi bir İK uzmanı olmaya yönlendirecek.
+                            <br>Unutmayın, hayat bir keşif yolculuğudur ve ben de bu yolculukta insan kaynaklarıyla şekillenmiş bir kariyer inşa etmeye kararlıyım. Siz de hayallerinizi takip edin ve tutkularınızı gerçekleştirin!
+                            <br>
+                            Sevgiler,<br>
+                            Selin Gökbey
+                          </p>  
+                         </div> 
+                         
+                       </div>
+                      </div>
+                   
+                    
+                    </div>  
+                </div>       
+
+          </div>
+
+         
+
+          
+
+
+
+          <br><br><br><br><br><br><br><br>
+          <section class="footer">
+            <div class="footersosyal">
+              <h4>Sosyal Medya</h4>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                
+            </ul>
+            <ul class="social-icons">
+              <li><a href="admin.html" id="adminicon">ADMIN <i class="fa fa-lock"></i></a></li>
+            </ul>
+            </div>
+            <div class="footeriletisim">
+              <h4 style="margin:20px;">İletişim</h4>
+              <address>
+                <p style="margin: 20px;font-size: 16px;">Yenidoğan, Güneş Cd. 56,<br> 41100 İzmit/Kocaeli<br>
+                Phone: (123)-456-789 <br><br>
+                <b>DOGUKAN GORUR</b><br>
+                <a href="mailto:dkn.grr@example.com">dkn.grr@example.com</a>
+                </p>
+              </address>
+            </div>
+
+      </section>
+
+
+        <script src="kaynaklar/jquery.slim.min.js"></script>
+        <script src="kaynaklar/bootstrap.bundle.min.js"></script>
+        <script src="kaynaklar/popper.min.js"></script>
+        <script src="kaynaklar/bootstrap.min.js"></script>   
+
+          <script>
+
+            $(document).ready(function(){
+
+            $('.loader').addClass('hidden1');
+            });
+
+              
+
+
+          </script>
+
+
+    </body>

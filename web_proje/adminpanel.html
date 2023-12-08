@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>My Little House</title>
+        <meta name="description" content="tiny house, minimalist, minimal evler">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="kaynaklar/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <link rel="shortcut icon" href="img/caravan.png" type="image/x-icon" />
+        <style>
+     
+            .dropdown-item:hover{
+                background-color: transparent;
+            }
+            
+            #menu_yazi{
+                
+                margin-left: 10px;
+                font-family: 'Playfair Display', serif;
+            
+            }
+            #menu_yazi:hover{
+                
+                border-right: 3px solid white;
+                border-bottom: 2px solid white;
+                 border-radius: 10px;
+                 margin-right: -2.5px;
+                 margin-bottom: -2px;
+             }
+            .kontrol{
+              background-color: rgba(12,12,12,0.9);
+            }
+            .loader{
+              position: fixed;
+              top: 0px;
+              left: 0px;
+              width: 100%;
+              height: 100vh;
+              display: flex;
+              background: white;
+              justify-content: center;
+              align-items: center;
+              z-index: 999999;
+            }
+            .loader img{
+              width:50px;
+            
+            }
+            .hidden1{
+              animation: fadeOut 0.5s ease-in;
+              animation-fill-mode: forwards;
+            }
+            @keyframes fadeOut{
+              100%{
+                opacity: 0;
+                visibility: hidden;
+              }
+            }
+            
+            .navbar-brand{
+              letter-spacing: 5px;
+               border-bottom: 2px solid white;
+               border-right: 3px solid white;
+               border-radius: 10px;
+            }
+            #duyurubutonu:hover{
+                background-color: rgba(81, 79, 79, 0.9);
+                transition: 0.2s background-color ease-in-out;
+            }
+            .sayfakalip{
+                position: relative;
+                top: 100px;
+                display: flex;
+            }
+            .row1{
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+                justify-content: center;
+            }
+            
+            .iletisim_bilgi{
+                max-width: 100%;
+
+            }
+            .iletisim_bilgi p{
+                margin: 20px;
+                font-size: 20px;
+                
+            }
+          
+            input{
+                width: 200px;
+                margin: 20px 0px;
+            }
+           
+           
+           textarea{
+            max-width:50vw;
+           }
+
+           table{
+           width: 100%;
+            text-align: center;
+           }
+           th,td{
+            padding: 5px;
+           }
+
+           table ,tr,th,td {
+            border: 1px solid black;
+           }
+
+
+
+            #adminicon{
+              text-align: right;padding: 15px; background-color: brown; border-radius: 20px; text-decoration: none;font-size: 15px; 
+            }
+            #adminicon:hover{
+              color:white;
+              background-color: rgb(175, 62, 62);
+            }
+
+            .footersosyal{
+              color: white;
+              width: 50%;
+              display: flex;
+              flex-direction: column;
+              
+            }
+            .footersosyal h4{
+              margin: 20px;
+              text-align: right;
+              
+            }
+
+            .footeriletisim{
+              color: white;
+              width: 50%;
+              display: flex;
+              flex-direction: column;
+              
+            }
+            
+            .footersosyal ul {
+              max-width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0px;
+              padding-left: 20px;
+              justify-content: end;
+
+            }
+
+            .footersosyal ul li{
+              display: inline-block;
+              padding-left: 10px;
+            padding-right: 30px;
+            color: white;
+            
+            }
+            .footersosyal ul li a{
+              color: white;
+              font-size: 20px;
+
+            }
+            .footersosyal ul li a:hover{
+              color: blue;
+              transition: 0.2s color ease-in-out;
+            }
+
+            @media (max-width:1050px) {
+
+              #menu_yazi{
+                font-size: 14px;
+              }
+              .row{
+                justify-content: center;
+              }
+             
+
+            }
+
+            @media (max-width:991.20px) {
+              .row1{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .col-6{
+                    max-width: 100%;
+                }
+                .kontrol{
+              background-color: transparent;
+              border: 0px;
+            }
+          }
+            @media (max-width:850px) {
+              .icerikinsankaynaklariyazi p{
+              font-size: 1.4vw;
+              line-height: 2vw;
+            }
+            }
+            @media (max-width:600px) {
+              
+              input{
+                width: 50vw;
+              }
+                
+              .adminform{
+                max-width: 80vw;
+              }
+            
+            }
+           
+
+            
+            @media (max-width:500px) {
+              
+              textarea{
+                max-width: 50vw;
+              }
+              
+
+            }
+
+            
+
+          @media (max-width:400px){
+              .footer{
+               flex-direction: column;
+              }
+              .footersosyal ul {
+              max-width: 100%;
+              justify-content: start;
+              padding-left:10px ;
+            }
+            .footersosyal ul li a {
+              font-size: 20px;
+            }
+            .footersosyal h4{
+              max-width: 100%;
+              text-align: left;
+            }
+           
+
+          }
+          @media (max-width:370px){
+            .footersosyal ul li{
+              padding: 10px;
+              
+            }
+            .footersosyal ul li a {
+              font-size: 5vw;
+              
+            }
+
+          }
+
+       
+
+        </style>
+
+
+    </head>
+
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: rgba(12,12,12,0.9);">
+            <a class="navbar-brand" style="color:white;font-size: 16px;" href="index.html"><b>MY</b>LITTLE<b>TINY</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border:1px solid white;">
+              <i class="fa fa-bars" style="color:white;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" id="menu_yazi" style="color:white;" href="index.html">Anasayfa <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="menu_yazi" style="color:white;" href="hakkimizda.html">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="menu_yazi" style="color:white;" href="misyonvizyon.html">Misyon-Vizyon</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="menu_yazi" style="color:white" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Ürünlerimiz
+                  </a>
+                  <div class="dropdown-menu kontrol" >
+                    <a class="dropdown-item"   style="color:white;font-family: 'Playfair Display', serif;"href="tinys.html">● Tiny S</a>
+                    <a class="dropdown-item"  style="color:white;font-family: 'Playfair Display', serif;" href="tinyx.html">● Tiny X</a>
+                    <a class="dropdown-item"  style="color:white;font-family: 'Playfair Display', serif;" href="tinyy.html">● Tiny Y</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="menu_yazi"  style="color:white" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                      Birimlerimiz
+                    </a>
+                    <div class="dropdown-menu kontrol">
+                      <a class="dropdown-item"   style="color:white;font-family: 'Playfair Display', serif;"href="ikaynaklar.html">● İnsan Kaynaklarımız</a>
+                      <a class="dropdown-item"   style="color:white;font-family: 'Playfair Display', serif;" href="ekip.html">● Ekibimiz</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="menu_yazi" style="color:white;" href="duyuru.html">Duyurular</a>
+                  </li>
+    
+                  <li class="nav-item">
+                    <a class="nav-link" id="menu_yazi" style="color:white;" href="iletisim.html">İletişim</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>    
+           
+          <div class="loader">
+            <img src="img/yukleme.gif" alt="">
+          </div>
+
+            <div class="container" style="position: relative; top: 100px;">
+                <div class="row">
+                    <div class="col-6" >
+                            <canvas id="chart"></canvas>
+                            <br>
+                      <p style="text-align: center;"><button class="btn btn-info">DÜZENLE</button></p>
+                        
+                    </div>
+                    <div class="col-6" >
+                        <canvas id="chart2"></canvas>
+                        <br>
+                      <p style="text-align: center;"><button class="btn btn-info">DÜZENLE</button></p>
+                   </div>  
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-6" >
+                          <canvas id="chart3"></canvas>
+                          <br>
+                          <p style="text-align: center;"><button class="btn btn-info">DÜZENLE</button></p>
+                  </div>
+                  <div class="col-6" >
+                      <canvas id="chart4"></canvas>
+                      <br>
+                      <p style="text-align: center;"><button class="btn btn-info">DÜZENLE</button></p>
+                 </div>  
+              </div>
+              <br>
+               <div class="row">
+
+                <div class="col-12">
+                  
+                  <table>
+                    <tr>
+                      <th>DUYURU</th>
+                      <th>INDEX</th>
+                      <th>DUZENLE</th>
+                      <th>KALDIR</th>
+                    </tr>
+                    <tr>
+                      <td>Kışa Özel Konfor: Isıtmalı Tiny House'lar Şimdi Satışta!</td>
+                      <td>0</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td>KAMPANYA !!!</td>
+                      <td>1</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td>Sürdürülebilir Yaşam: İlk 5 Alıcıya Ücretsiz Güneş Enerjisi Sistemi!!</td>
+                      <td>2</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td>Evimizi Kişiselleştirin: Tiny House İç Mekan Tasarım Atölyesi!!</td>
+                      <td>3</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td>Yatırım Yapın, Gelir Elde Edin: Tiny House Kiralama Programımız Başlıyor!</td>
+                      <td>4</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td>Sevgililer Gününe Özel: Aşkınızı Yansıtan Romantic Tiny House'lar</td>
+                      <td>5</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td>Yılın Fırsatı: İkinci Tiny House Alımınıza Özel İndirim!!!</td>
+                      <td>6</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                   <tr>
+                      <td colspan="4"><button class="btn btn-dark">DUYURU EKLE</button></td>
+                   </tr>
+                  </table>
+                  <br>
+                 
+                </div>
+
+                </div>
+             <div class="row">
+
+              <div class="col-12">
+
+                <table>
+                    <tr>
+                      <th>MODEL</th>
+                      <th>MODEL NO</th>
+                      <th>DUZENLE</th>
+                      <th>KALDIR</th>
+                    </tr>
+
+                    <tr>
+                      <td><img src="img/model_1/model1_anasayfa.jpg" alt="" style="max-width: 200px;height: 100px; "></th>
+                      <td>TINY S</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/model_2/model2_anasayfa.jpg" alt="" style="max-width: 200px;height: 100px; "></th>
+                      <td>TINY X</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/model_3/model3_anasayfa.jpg" alt="" style="max-width: 200px;height: 100px; "></th>
+                      <td>TINY Y</td>
+                      <td><button class="btn btn-info">DUZENLE</button></td>
+                      <td><button class="btn btn-danger">KALDIR</button></td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><button class="btn btn-dark">MODEL EKLE</button></td>
+                    </tr>
+
+                </table>
+
+              </div>
+
+             </div>
+             <br><br><br><br>
+             <p style="text-align: center;"><a href="index.html" class="btn btn-danger" style="width: 100px;">ÇIKIŞ</a></p>
+
+            </div>
+        
+
+          <br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+          <section class="footer">
+            <div class="footersosyal">
+              <h4>Sosyal Medya</h4>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                
+            </ul>
+
+            <ul class="social-icons">
+                <li><a href="admin.html" id="adminicon">ADMIN <i class="fa fa-lock"></i></a></li>
+              </ul>
+
+            </div>
+            <div class="footeriletisim">
+              <h4 style="margin:20px;">İletişim</h4>
+              <address>
+                <p style="margin: 20px;font-size: 16px;">Yenidoğan, Güneş Cd. 56,<br> 41100 İzmit/Kocaeli<br>
+                Phone: (123)-456-789 <br><br>
+                <b>DOGUKAN GORUR</b><br>
+                <a href="mailto:dkn.grr@example.com">dkn.grr@example.com</a>
+                </p>
+              </address>
+            </div>
+
+      </section>
+
+
+        <script src="kaynaklar/jquery.slim.min.js"></script>
+        <script src="kaynaklar/bootstrap.bundle.min.js"></script>
+        <script src="kaynaklar/popper.min.js"></script>
+        <script src="kaynaklar/bootstrap.min.js"></script>   
+
+          <script>
+
+         $(document).ready(function(){
+
+            $('.loader').addClass('hidden1');
+            
+
+
+             var ctx = document.getElementById('chart').getContext('2d');
+             var chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+                        datasets: [{
+                            label: 'Ziyaretçi Sayıları (bin)',
+                            backgroundColor:'transparent',
+                            borderColor:'black',
+                            data: [2, 3, 5, 3, 6, 8, 10, 7, 8, 7, 5, 4]
+                        }]
+                    },
+                    options: {}
+                });
+
+            var ctx2= document.getElementById('chart2').getContext('2d');
+            var chart = new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+                        datasets: [{
+                            label: 'Satış Adedi',
+                            backgroundColor:'black',
+                            borderColor:'black',
+                            data: [30, 33, 44, 56, 110, 100, 150, 120, 100, 80, 70,70]
+                        }]
+                    },
+                    options: {}
+                });
+                var a = document.getElementById('chart3').getContext('2d');
+             var chart = new Chart(a, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['TINY S','TINY X','TINY Y'],
+                        datasets: [{
+                            label: 'Tercihler',
+                            backgroundColor:['#f8001e','#122a43','#fbf557'],
+                            borderColor:'black',
+                            data: [30,50,20]
+                        }]
+                    },
+                    options: {}
+                });
+              
+            var b= document.getElementById('chart4').getContext('2d');
+            var chart = new Chart(b, {
+                    type: 'line',
+                    data: {
+                        labels: ['2020', '2021', '2022', '2023'],
+                        datasets: [{
+                            label: 'Satış Adedi',
+                            backgroundColor:"transparent",
+                            borderColor:'black',
+                            data: [58, 100, 163 ,180]
+                        }]
+                    },
+                    options: {}
+                });         
+
+                         
+                        
+         });
+
+
+          </script>
+
+
+    </body>
